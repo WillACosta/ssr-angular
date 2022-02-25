@@ -1,0 +1,7 @@
+<p>home works!</p>
+
+<h1>Unsplash Angular SSR App</h1>
+
+<div *ngFor="let p of photos$ | async">
+  <img src="{{ p.urls.thumb }}" alt="">
+</div>
