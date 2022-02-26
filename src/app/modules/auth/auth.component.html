@@ -7,15 +7,16 @@
 
     <div class="flex flex-row">
       <div class="w-full max-w-sm">
-        <form>
+        <form [formGroup]="authForm" (ngSubmit)="authenticate()">
           <div class="mb-4">
             <input class="w-full text-gray-600 h-14 rounded indent-3 border-none
-            focus:outline-none focus:ring-1 focus:ring-primary-brand"
-              id="username" type="text"
+              focus:outline-none focus:ring-1 focus:ring-primary-brand"
+              type="text"
               placeholder="Seu nome"
+              formControlName="userName"
               />
 
-            <button type="button" class="mt-3 w-full text-white bg-primary-brand
+            <button type="submit" class="mt-3 w-full text-white bg-primary-brand
               hover:bg-blend-darken
               font-semibold px-6 py-3 rounded-md">
               Continuar

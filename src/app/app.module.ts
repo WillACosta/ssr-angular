@@ -5,6 +5,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     TransferHttpCacheModule,
     AppRoutingModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],
