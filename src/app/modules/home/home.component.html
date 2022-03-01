@@ -1,7 +1,16 @@
-<p>home works!</p>
+<div class="bg-gradient-to-r
+  from-neutral-light to-neutral-medium h-full">
+  <div class="container mx-auto py-10">
+    <navigation-bar></navigation-bar>
 
-<h1>Unsplash Angular SSR App</h1>
+    <div class="pt-14">
+      <home-presentation></home-presentation>
 
-<div *ngFor="let p of photos$ | async">
-  <img src="{{ p.urls.thumb }}" alt="">
+      <div class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl">
+        <ng-container *ngFor="let photo of photos$ | async">
+          <photo-card [photo]="photo"></photo-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>

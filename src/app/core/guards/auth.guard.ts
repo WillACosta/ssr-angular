@@ -7,7 +7,7 @@ import { CanLoad, Router } from '@angular/router';
 export class AuthGuard implements CanLoad {
   constructor(private readonly _router: Router) {}
 
-  isAuthenticated = false;
+  isAuthenticated = true;
 
   canLoad() {
     if (this.isAuthenticated) {

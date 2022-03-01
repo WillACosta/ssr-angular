@@ -1,30 +1,20 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TransferState } from '@angular/platform-browser';
-
 import { Observable } from 'rxjs';
+
+import { Photo } from '../../models/photo.model';
+import { PhotoService } from './services/photo.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  photos$: any;
+  photos$: Observable<Photo[]>;
 
-  constructor(
-    private readonly _http: HttpClient,
-    private state: TransferState
-  ) {}
+  constructor(private readonly _photoService: PhotoService) {}
 
   ngOnInit() {
-    this.photos$ = this.getPhotos();
+    this.photos$ = this._photoService.getPhotos();
   }
-
-  private getPhotos(): Observable<any> {
-    return this._http.get(
-      'https://api.unsplash.com/photos/?client_id=-ZY5x5KHUPARycAuy2p10egVEYJKD5QIDOy1IWG1GwU'
-    );
-  }
-
 }
