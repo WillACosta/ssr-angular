@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Photo } from '../../models/photo.model';
 import { PhotoService } from './services/photo.service';
+import { ListPhotosQuery, Photo } from '../../models';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private readonly _photoService: PhotoService) {}
 
   ngOnInit() {
-    this.photos$ = this._photoService.getPhotos();
+    this.photos$ = this._photoService.getPhotos(new ListPhotosQuery());
   }
 }

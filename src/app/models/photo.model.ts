@@ -20,21 +20,21 @@ export interface Photo {
   user:                     User;
 }
 
-export interface PhotoLinks {
+interface PhotoLinks {
   self:              string;
   html:              string;
   download:          string;
   download_location: string;
 }
 
-export interface Sponsorship {
+interface Sponsorship {
   impression_urls: string[];
   tagline:         string;
   tagline_url:     string;
   sponsor:         User;
 }
 
-export interface User {
+interface User {
   id:                 string;
   updated_at:         Date;
   username:           string;
@@ -56,7 +56,7 @@ export interface User {
   social:             Social;
 }
 
-export interface UserLinks {
+interface UserLinks {
   self:      string;
   html:      string;
   photos:    string;
@@ -66,29 +66,29 @@ export interface UserLinks {
   followers: string;
 }
 
-export interface ProfileImage {
+interface ProfileImage {
   small:  string;
   medium: string;
   large:  string;
 }
 
-export interface Social {
+interface Social {
   instagram_username: string;
   portfolio_url:      string;
   twitter_username:   string;
   paypal_email:       null;
 }
 
-export interface TopicSubmissions {
+interface TopicSubmissions {
   "business-work": BusinessWork;
 }
 
-export interface BusinessWork {
+interface BusinessWork {
   status:      string;
   approved_on: Date;
 }
 
-export interface Urls {
+interface Urls {
   raw:      string;
   full:     string;
   regular:  string;

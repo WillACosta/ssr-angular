@@ -1,16 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
-import { Photo } from '../../../models/photo.model';
+import { environment } from '../../../../environments/environment';
+import { Photo, ListPhotosQuery, RandomPhotoQuery } from '../../../models';
 
 @Injectable()
 export class PhotoService {
   constructor(private readonly _httpClient: HttpClient) {}
 
-  getPhotos(): Observable<Photo[]> {
+  getPhotos(query: ListPhotosQuery): Observable<Photo[]> {
     return this._httpClient.get<Photo[]>(
-      'https://api.unsplash.com/photos/?client_id=-ZY5x5KHUPARycAuy2p10egVEYJKD5QIDOy1IWG1GwU'
+      `${this.endpointUrl}${query.toQueryParams}`
     );
+  }
+
+  getRandomPhotos(query: RandomPhotoQuery): Observable<Photo[]> {
+    return this._httpClient.get<Photo[]>(
+      `${this.endpointUrl}/random?count=${query.count}`
+    );
+  }
+
+  getPhoto(id: string) {
+    return this._httpClient.get<Photo>(`${this.endpointUrl}/${id}`);
+  }
+
+  private get endpointUrl(): string {
+    return `${environment.unsplashApi}/photos?client_id=${environment.unsplashAccessKey}`;
   }
 }
