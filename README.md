@@ -1,10 +1,11 @@
 <div style="display: flex; gap: 25px; padding-bottom: 35px;">
   <img src="./github/ssr-ng.png" style="width: 600px;" />
 </div>
+<br>
 
 Desenvolvida com Angular 13, nesta aplicação utilizamos a API do Unsplash para exibir imagens aleatórias em um mansory grid, o projeto utiliza também a estratégia de Server Side Rendering e otimizações de performance com Application Shell e a State Transfer API do Angular Universal. Para mais detalhes acesse o artigo que escrevi sobre o assunto.
 
-# Ferraments e Tecnologias Utilizadas
+## Ferraments e Tecnologias Utilizadas
 
 - [Angular 13](https://angular.io/)
 - [TailwindCSS](https://tailwindcss.com/)
@@ -21,3 +22,5 @@ Desenvolvida com Angular 13, nesta aplicação utilizamos a API do Unsplash para
 
 2. Execute o projeto com
    `npm run dev:ssr`
+
+<br>
