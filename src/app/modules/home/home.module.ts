@@ -1,3 +1,4 @@
+import { HomeResolver } from './services/home.resolver';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,6 @@ import { SearchPhotosService } from './services/search-photos.service';
 @NgModule({
   declarations: [HomeComponent, PhotoCardComponent, HomePresentationComponent],
   imports: [CommonModule, HomeRoutingModule, HttpClientModule, SharedModule],
-  providers: [PhotoService, SearchPhotosService],
+  providers: [PhotoService, SearchPhotosService, HomeResolver],
 })
 export class HomeModule {}

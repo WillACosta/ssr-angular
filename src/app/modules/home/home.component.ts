@@ -1,8 +1,7 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { PhotoService } from './services/photo.service';
-import { ListPhotosQuery, Photo } from '../../models';
+import { Photo } from 'src/app/models';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +9,11 @@ import { ListPhotosQuery, Photo } from '../../models';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  photos$: Observable<Photo[]>;
+  photos: Photo[];
 
-  constructor(private readonly _photoService: PhotoService) {}
+  constructor(private readonly _route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.photos$ = this._photoService.getPhotos(new ListPhotosQuery());
+    this.photos = this._route.snapshot.data['photos'];
   }
 }

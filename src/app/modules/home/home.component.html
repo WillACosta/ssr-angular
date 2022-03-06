@@ -7,7 +7,7 @@
       <home-presentation></home-presentation>
 
       <div class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg xl:masonry-xl">
-        <ng-container *ngFor="let photo of photos$ | async">
+        <ng-container *ngFor="let photo of photos">
           <photo-card [photo]="photo"></photo-card>
         </ng-container>
       </div>

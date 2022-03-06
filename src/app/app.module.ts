@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { TransferHttpCacheModule } from '@nguniversal/common';
+import {
+  BrowserModule,
+  BrowserTransferStateModule,
+} from '@angular/platform-browser';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +15,8 @@ import { AuthModule } from './modules/auth/auth.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    TransferHttpCacheModule,
+    BrowserTransferStateModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     AuthModule
   ],
