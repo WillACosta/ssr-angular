@@ -21,10 +21,10 @@ Confira o artigo [aqui](https://medium.com/@willAmaral/frontend-e-ssr-de-volta-%
 1. Instale as dependências com o comando
    `npm install`
 
-2. Obtenha sua chave de acesso da API do Unsplash aqui, logo depois, dentro do diretório do projeto clonado, execute o comando
+2. Obtenha sua chave de acesso da API do Unsplash [aqui](https://unsplash.com/developers), logo depois, dentro do diretório do projeto clonado, execute o comando
   `cp environments/environment.ts environments/environment.local.ts`.  O que estamos fazendo é apenas criar uma cópia do arquivo 'environment.ts' para utilizarmos em ambiente de desenvolvimento
 
-3. Adicione sua chave de acesso na propriedade 'unsplashAccessKey'
+3. Adicione sua chave de acesso na propriedade 'unsplashAccessKey' do arquivo 'environment.local.ts'
 
 4. Execute o projeto com
    `npm run dev:ssr`
