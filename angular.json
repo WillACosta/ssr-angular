@@ -84,7 +84,13 @@
               "browserTarget": "ssr-angular:build:production"
             },
             "development": {
-              "browserTarget": "ssr-angular:build:development"
+              "browserTarget": "ssr-angular:build:development",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
             },
             "customWebpackConfig": {
               "path": "./webpack.config.js"
@@ -137,7 +143,13 @@
             "development": {
               "optimization": false,
               "sourceMap": true,
-              "extractLicenses": false
+              "extractLicenses": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
