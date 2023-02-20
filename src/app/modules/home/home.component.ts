@@ -1,6 +1,6 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 import { Photo } from 'src/app/models';
 
@@ -22,12 +22,16 @@ export class HomeComponent implements OnInit {
     this.photos = this._route.snapshot.data['photos'];
   }
 
+  trackByPhotoId(index: number) {
+    return index;
+  }
+
   private setMetaTags() {
     this._title.setTitle('SSR Angular Photo Gallery');
     this._meta.addTags([
       { name: 'description', content: 'Angular SSR Photo Gallery' },
       { name: 'author', content: 'Will' },
-      { name: 'keywords', content: 'angular, ssr, unsplash, gallery, photo' }
+      { name: 'keywords', content: 'angular, ssr, unsplash, gallery, photo' },
     ]);
   }
 }
